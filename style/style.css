@@ -1,9 +1,17 @@
+@keyframes AnimationName {
+    0%{background-position:0% 51%}
+    100%{background-position:100% 50%}
+}
 html, body{
     background: ghostwhite;
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
+    background: linear-gradient(270deg, #fae17b, #edb9b4, #e8a1b0, #bba5cc, #a1cdeb);
+    background-size: 1000% 1000%;
+    animation: AnimationName 120s ease infinite;
+    font-family: 'Montserrat', sans-serif;
 }
 #button{
     height: 100px;
@@ -20,16 +28,29 @@ html, body{
 .card{
     height: 100px;
     width: 100px;
-    background: antiquewhite;
     display: inline-block;
     margin: 25px;
 }
 p{
     text-align: center;
-    font-size: 15px;
+    font-size: 100px;
+    font-family: 'Montserrat', sans-serif;
     padding: 0;
-    margin-top: 41.5px;
-    color: snow;
+    margin-top: -10px;
+    color: floralwhite;
+    transform: rotateY(180deg);
+}
+
+@keyframes revert_start {
+    50%{
+        transform: rotateY(90deg);
+        transform: scale(1.5);
+        background: floralwhite;
+    }
+    100%{
+        background: black;
+        transform: rotateY(180deg);
+    }
 }
 
 /*left left left*/
@@ -57,9 +78,10 @@ p{
     left: 50%;
     margin-top: -50px;
     margin-left: -50px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     position: absolute;
-    background: black;
-    transition: ease 0.2s;
+    background: floralwhite;
+    transition: all 0.2s;
     animation-name: regroup_left;
     animation-timing-function: ease;
     animation-duration: 1s;
@@ -67,7 +89,22 @@ p{
 }
 .left:hover{
     transform: scale(1.2);
+    box-shadow: 0 19px 38px rgba(0,0,0,0.40), 0 15px 12px rgba(0,0,0,0.22);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.l-revert{
+    height: 100px;
+    width: 100px;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -150px;
+    position: absolute;
     transition: all 0.2s;
+    animation-name: revert_start;
+    animation-timing-function: ease;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 /*right right right*/
@@ -96,30 +133,29 @@ p{
     margin-top: -50px;
     margin-left: -50px;
     position: absolute;
-    background: blue;
-    transition: ease 0.2s;
+    background: floralwhite;
+    transition: all 0.2s;
     animation-name: regroup_right;
     animation-timing-function: ease;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 .right:hover{
     transform: scale(1.2);
+    box-shadow: 0 19px 38px rgba(0,0,0,0.40), 0 15px 12px rgba(0,0,0,0.22);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.r-revert{
+    height: 100px;
+    width: 100px;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: 50px;
+    position: absolute;
     transition: all 0.2s;
-}
-
-/*REVERT*/
-@keyframes revert {
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(50deg);
-    }
-}
-.revert{
-    transition: ease 0.2s;
-    animation-name: revert;
+    animation-name: revert_start;
     animation-timing-function: ease;
     animation-duration: 1s;
     animation-fill-mode: forwards;

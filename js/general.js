@@ -12,21 +12,41 @@ function card(style) {
     card.id = "card";
     card.className = style;
     card.onclick = card_open;
-    card.innerHTML = '<p style="visibility: hidden">'+rndNumber+'</p>';
     document.body.appendChild(card);
 }
 
-var rndNumber = Math.floor(Math.random() * (6 - 3)) + 3;
+function text_card(side) {
+    all_card = document.getElementsByTagName('div');
+    lr_card = document.getElementsByClassName(side);
+    for (var i = 0; i < all_card.length; i++){
+        if (lr_card[0].classList[0] == 'right'){
+            var rndNumber = Math.floor(Math.random() * (6 - 3)) + 3;
+            lr_card = document.getElementsByClassName('right');
+            lr_card[0].innerHTML = '<p>'+rndNumber+'</p>'
+        }else {
+            var rndNumber = Math.floor(Math.random() * (6 - 3)) + 3;
+            lr_card = document.getElementsByClassName('left');
+            lr_card[0].innerHTML = '<p>'+rndNumber+'</p>'
+        }
+    }
+}
 
 function card_open() {
+    card = document.querySelectorAll('#card');
     document.body.onclick = function (event) {
         t = event.target || event.srcElement;
-        if (t.id == 'left') {
-            t.classList.add("revert");
-            t.firstChild.style = "visibility: visible";
-        } else {
-            t.classList.add("revert");
-            t.firstChild.style = "visibility: visible";
-        };
+        if (t.classList == 'left') {
+            card[1].classList.add("l-revert");
+            text_card('left');
+            setTimeout(function() {
+                    card[1].firstChild.style = "visibility: visible";
+                }, 1000);
+        }else {
+            text_card('right');
+            card[0].classList.add("r-revert");
+            setTimeout(function() {
+                card[0].firstChild.style = "visibility: visible";
+            }, 1000);
+        }
     };
-};
+}
