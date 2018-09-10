@@ -35,13 +35,14 @@ function card_open() {
     card = document.querySelectorAll('#card');
     document.body.onclick = function (event) {
         t = event.target || event.srcElement;
-        if (t.classList == 'left') {
+        if (t.classList == 'left' && t.classList != 'l-revert') {
             card[1].classList.add("l-revert");
             text_card('left');
             setTimeout(function() {
                     card[1].firstChild.style = "visibility: visible";
                 }, 1000);
-        }else {
+        }
+        if (t.classList == 'right' && t.classList != 'r-revert') {
             text_card('right');
             card[0].classList.add("r-revert");
             setTimeout(function() {
