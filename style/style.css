@@ -1,16 +1,9 @@
-@keyframes AnimationName {
-    0%{background-position:0% 51%}
-    100%{background-position:100% 50%}
-}
 html, body{
-    background: ghostwhite;
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
-    background: linear-gradient(270deg, #fae17b, #edb9b4, #e8a1b0, #bba5cc, #a1cdeb);
-    background-size: 1000% 1000%;
-    animation: AnimationName 120s ease infinite;
+    background: #353842;
     font-family: 'Montserrat', sans-serif;
 }
 #button{
@@ -21,10 +14,40 @@ html, body{
     margin-top: -50px;
     margin-left: -50px;
     padding: 0;
-    border: 0;
+    border: 1px;
     position: absolute;
     text-align: center;
+    transition: all ease 0.2s;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    box-shadow:
+            1px 1px #009E60,
+            2px 2px #009E60,
+            3px 3px #009E60,
+            4px 4px #009E60,
+            5px 5px #009E60,
+            6px 6px #009E60,
+            7px 7px #009E60;
 }
+#button:hover{
+    -webkit-transform: translateX(-7px) scale(1.2);
+    transform: translateX(-7px) scale(1.2);
+}
+#button:active{
+    box-shadow: 0 0 0;
+    -webkit-transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1);
+}
+span{
+    height: 100px;
+    width: 100px;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    position: absolute;
+}
+
 .card{
     height: 100px;
     width: 100px;
@@ -42,7 +65,7 @@ p{
 }
 
 @keyframes revert_start {
-    50%{
+    35%{
         transform: rotateY(90deg);
         transform: scale(1.5);
         background: floralwhite;
@@ -78,7 +101,6 @@ p{
     left: 50%;
     margin-top: -50px;
     margin-left: -50px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     position: absolute;
     background: floralwhite;
     transition: all 0.2s;
@@ -86,11 +108,32 @@ p{
     animation-timing-function: ease;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+    box-shadow:
+            1px 1px #F28411,
+            2px 2px #F28411,
+            3px 3px #F28411,
+            4px 4px #F28411,
+            5px 5px #F28411,
+            6px 6px #F28411,
+            7px 7px #F28411;
 }
 .left:hover{
-    transform: scale(1.2);
-    box-shadow: 0 19px 38px rgba(0,0,0,0.40), 0 15px 12px rgba(0,0,0,0.22);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    box-shadow:
+            1px 1px #F28411,
+            2px 2px #F28411,
+            3px 3px #F28411,
+            4px 4px #F28411,
+            5px 5px #F28411,
+            6px 6px #F28411,
+            7px 7px #F28411;
+    -webkit-transform: translateX(-7px) scale(1.2);
+    transform: translateX(-7px) scale(1.2);
+}
+.left:active{
+    box-shadow: 0 0 0;
+    transition: all 0.2s ease;
+    -webkit-transform: translateX(7px) scale(1);
+    transform: translateX(7px) scale(1);
 }
 .l-revert{
     height: 100px;
@@ -128,6 +171,8 @@ p{
 .right{
     height: 100px;
     width: 100px;
+    max-height: 150px;
+    max-width: 150px;
     top: 50%;
     left: 50%;
     margin-top: -50px;
@@ -139,12 +184,33 @@ p{
     animation-timing-function: ease;
     animation-duration: 1s;
     animation-fill-mode: forwards;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow:
+            1px 1px #009E60,
+            2px 2px #009E60,
+            3px 3px #009E60,
+            4px 4px #009E60,
+            5px 5px #009E60,
+            6px 6px #009E60,
+            7px 7px #009E60;
+
 }
 .right:hover{
-    transform: scale(1.2);
-    box-shadow: 0 19px 38px rgba(0,0,0,0.40), 0 15px 12px rgba(0,0,0,0.22);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    box-shadow:
+            1px 1px #009E60,
+            2px 2px #009E60,
+            3px 3px #009E60,
+            4px 4px #009E60,
+            5px 5px #009E60,
+            6px 6px #009E60,
+            7px 7px #009E60;
+    -webkit-transform: translateX(-7px) scale(1.2);
+    transform: translateX(-7px) scale(1.2);
+}
+.right:active{
+    box-shadow: 0 0 0;
+    transition: all 0.2s ease;
+    -webkit-transform: translateX(7px) scale(1);
+    transform: translateX(7px) scale(1);
 }
 .r-revert{
     height: 100px;
@@ -154,9 +220,9 @@ p{
     margin-top: -50px;
     margin-left: 50px;
     position: absolute;
-    transition: all 0.2s;
     animation-name: revert_start;
     animation-timing-function: ease;
+    animation-delay: 0.1s;
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
