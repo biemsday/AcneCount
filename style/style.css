@@ -1,15 +1,45 @@
 html, body{
-    height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
     background: #353842;
     font-family: 'Montserrat', sans-serif;
 }
+h1,h2,ul{
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    top: 75px;
+    left: 20%;
+    color: floralwhite;
+    width: 500px;
+    max-height: 100px;
+}
+h1{
+    font-size: 5em;
+}
+h2{
+    font-size: 3em;
+}
+li{
+    list-style: none;
+}
+span{
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    margin-left: -150px;
+    margin-top: -39px;
+    color: floralwhite;
+}
+a:visited{
+    color: floralwhite;
+}
+
 #button{
     height: 100px;
     width: 100px;
-    top: 50%;
+    top: 60%;
     left: 50%;
     margin-top: -50px;
     margin-left: -50px;
@@ -20,6 +50,7 @@ html, body{
     transition: all ease 0.2s;
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
+    background: floralwhite;
     box-shadow:
             1px 1px #009E60,
             2px 2px #009E60,
@@ -37,15 +68,6 @@ html, body{
     box-shadow: 0 0 0;
     -webkit-transform: translateX(0) scale(1);
     transform: translateX(0) scale(1);
-}
-span{
-    height: 100px;
-    width: 100px;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -50px;
-    position: absolute;
 }
 
 .card{
@@ -82,13 +104,13 @@ p{
 
 @keyframes regroup_left {
     0%{
-        top: 50%;
+        top: 60%;
         left: 50%;
         margin-top: -50px;
         margin-left: -50px;
     }
     100%{
-        top: 50%;
+        top: 60%;
         left: 50%;
         margin-top: -50px;
         margin-left: -150px;
@@ -97,7 +119,7 @@ p{
 .left{
     height: 100px;
     width: 100px;
-    top: 50%;
+    top: 60%;
     left: 50%;
     margin-top: -50px;
     margin-left: -50px;
@@ -138,7 +160,7 @@ p{
 .l-revert{
     height: 100px;
     width: 100px;
-    top: 50%;
+    top: 60%;
     left: 50%;
     margin-top: -50px;
     margin-left: -150px;
@@ -156,13 +178,13 @@ p{
 
 @keyframes regroup_right {
     0%{
-        top: 50%;
+        top: 60%;
         left: 50%;
         margin-top: -50px;
         margin-left: -50px;
     }
     100%{
-        top: 50%;
+        top: 60%;
         left: 50%;
         margin-top: -50px;
         margin-left: 50px;
@@ -173,7 +195,7 @@ p{
     width: 100px;
     max-height: 150px;
     max-width: 150px;
-    top: 50%;
+    top: 60%;
     left: 50%;
     margin-top: -50px;
     margin-left: -50px;
@@ -215,7 +237,7 @@ p{
 .r-revert{
     height: 100px;
     width: 100px;
-    top: 50%;
+    top: 60%;
     left: 50%;
     margin-top: -50px;
     margin-left: 50px;
